@@ -12,8 +12,12 @@ PORTAL_URL = "https://portal.nap.gsic.titech.ac.jp/GetAccess/Login?Template=user
 
 
 
-def start_browse(url, wifi_portal: str = "portal"):
+def start_browse(url):
     options = webdriver.ChromeOptions()
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--remote-debugging-port=9222')
     options.add_experimental_option("detach", True)
     s = Service(ChromeDriverManager().install())
     browser = webdriver.Chrome(service=s, options=options)
