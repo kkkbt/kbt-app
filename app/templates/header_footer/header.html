@@ -1,0 +1,45 @@
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://kbt-website.herokuapp.com/library">kbt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library" class="button">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library">Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library">Investment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library">Biography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kbt-website.herokuapp.com/library" tabindex="-1">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+
+                        {% if title != 'login' and title != 'join' %}
+                        <a class="nav-link" href="{{ url_for('setting', user_name=user_name) }}" tabindex="-1"><i
+                                class="fa-solid fa-wrench"></i></a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

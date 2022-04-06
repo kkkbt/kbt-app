@@ -1,0 +1,75 @@
+{% include "header_footer/head.html" %}
+<!--  Link to my css  -->
+<link rel="stylesheet" href="../static/scss/index.css">
+<link rel="stylesheet" href="../static/scss/contents.css">
+
+
+{% with title=title %}
+    {% include "header_footer/header.html" %}
+    {% include "contents-component/title-screen.html" %}
+{% endwith %}
+
+<div class="container">
+    <!-- Content here -->
+    <div class="row">
+        <div class="col-lg-3 col-sm-12">
+            <div class="content-table">
+                <nav class="nav flex-column">
+
+                    {% for data_kind in data: %}
+
+                        <a class="nav-link" href="#kind_{{ data_kind }}">{{ data_kind }}</a>
+
+                        {% for data_title in data[data_kind]: %}
+                            <nav class="nav flex-column sub-nav">
+                                {% if img: %}
+                                    <a class="nav-link"
+                                       href="#{{ data_kind }}_title_{{ data[data_kind][data_title]['id'] }}">{{ data_title }}</a>
+                                {% else: %}
+                                    <a class="nav-link"
+                                       href="#{{ data_kind }}_title_{{ data_title }}">{{ data_title }}</a>
+                                {% endif %}
+                            </nav>
+
+                        {% endfor %}
+                    {% endfor %}
+                </nav>
+            </div>
+
+            <!--            &lt;!&ndash; Google Advertisement &ndash;&gt;-->
+            <!--            <script async-->
+            <!--                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7058635381134249"-->
+            <!--                    crossorigin="anonymous"></script>-->
+            <!--            &lt;!&ndash; 1 &ndash;&gt;-->
+            <!--            <ins class="adsbygoogle"-->
+            <!--                 style="display:block"-->
+            <!--                 data-ad-client="ca-pub-7058635381134249"-->
+            <!--                 data-ad-slot="6201847628"-->
+            <!--                 data-ad-format="auto"-->
+            <!--                 data-full-width-responsive="true"></ins>-->
+            <!--            <script>-->
+            <!--                (adsbygoogle = window.adsbygoogle || []).push({});-->
+            <!--            </script>-->
+
+        </div>
+        <div class="content">
+            <div class="row cards-row">
+                <div class="col-lg-3 col-sm-12">
+                    <div class="card">
+                        <img src="../static/img/app_title/tokyo_tech.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">東工大ポータル自動ログイン</h5>
+                            <p class="card-text">東工大ポータルに自動ログインします。<br>実行する前に設定でマトリクスを設定する必要があります。</p>
+                            <a href="{{ url_for('login_portal', user_name=user_name) }}" class="btn btn-primary">ログインする</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% include "header_footer/footer.html" %}

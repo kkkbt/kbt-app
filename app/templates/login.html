@@ -1,0 +1,40 @@
+{% include "header_footer/head.html" %}
+<!--  Link to my css  -->
+<link rel="stylesheet" href="../static/scss/index.css">
+<link rel="stylesheet" href="../static/scss/contents.css">
+<link rel="stylesheet" href="../static/scss/login.css">
+
+
+{% with title=title %}
+{% include "header_footer/header.html" %}
+{% include "contents-component/title-screen.html" %}
+{% endwith %}
+
+<div class="container">
+    <!-- Content here -->
+    <h5>{{ explanation }}</h5>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+
+            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+            <label class="form-label">Password</label>
+
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+        <div class="div-for-button">
+                <a class="join_anchor" href="{{ url_for('join') }}" role="button">アカウント作成する</a>
+                <button type="submit" class="btn btn-primary">ログイン</button>
+
+        </div>
+    </form>
+</div>
+
+{% include "header_footer/footer.html" %}

@@ -1,0 +1,68 @@
+body .title-screens {
+  position: relative;
+  text-align: center;
+}
+body .title-screens h5 {
+  position: absolute;
+  bottom: 6.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+body .container {
+  padding-bottom: 2em;
+}
+body .container .content-table {
+  margin-top: 2em;
+  background-color: #555;
+  border-radius: 0.5em;
+}
+body .container .content-table a {
+  color: #bbb;
+}
+body .container .content-table .sub-nav {
+  margin-left: 1em;
+  font-size: 1em;
+}
+body .container .content {
+  margin-top: 2em;
+}
+body .container .content h1 {
+  color: white;
+}
+body .container .content .cards-row {
+  margin-bottom: 1.5em;
+}
+body .container .content .cards-row .card {
+  background-color: #555;
+  margin-bottom: 1em;
+}
+body .container .content .cards-row .card .dummy-img {
+  background-color: #999;
+}
+body .container .content .cards-row .card .card-title {
+  color: #bbb;
+}
+body .container .content .cards-row .card p {
+  color: #bbb;
+}
+body .container .content .cards-row .card .accordion .accordion-button {
+  background-color: #bbb;
+}
+body .container .content .cards-row .card .accordion .accordion-body {
+  background-color: #ddd;
+}
+body .container .content .cards-row .card .accordion .content-wide-btn {
+  width: 100%;
+}
+body .container .contact-icons {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.graph {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+}
+
+/*# sourceMappingURL=contents.css.map */

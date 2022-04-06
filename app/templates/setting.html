@@ -1,0 +1,27 @@
+{% include "header_footer/head.html" %}
+<!--  Link to my css  -->
+<link rel="stylesheet" href="../static/scss/index.css">
+<link rel="stylesheet" href="../static/scss/contents.css">
+<link rel="stylesheet" href="../static/scss/setting.css">
+
+
+{% with title=title %}
+    {% include "header_footer/header.html" %}
+{% endwith %}
+
+<div class="container">
+
+    <h1>Setting</h1>
+
+    {% with user_name=user_name %}
+        {% include "setting-component/edit-password.html" %}
+    {% endwith %}
+
+    {% with current_data=current_data, user_name=user_name %}
+        {% include "setting-component/edit-matrix.html" %}
+    {% endwith %}
+
+    <a href="{{ url_for('home', user_name=user_name) }}">戻る</a>
+</div>
+
+{% include "header_footer/footer.html" %}

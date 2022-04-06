@@ -1,0 +1,51 @@
+body {
+  background-color: #333;
+}
+body #carouselExampleInterval .carousel-item {
+  height: 100%;
+  display: grid;
+}
+body .background-1 {
+  background-color: #333;
+  color: #bbb;
+}
+body .background-2 {
+  background-color: #bbb;
+  color: #333;
+}
+body .container-fluid .about-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5em 0 5em 0;
+}
+body .container-fluid .about-container h1 {
+  margin-bottom: 1em;
+}
+body .container-fluid .about-container .about-row .about-icon {
+  margin: 1em 0 1em 0;
+  width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  display: block;
+  height: 15em;
+}
+body .container-fluid .about-container .about-row .about-content {
+  margin: 1em 0 1em 0;
+}
+body .title-screens h5 {
+  font-size: 3em;
+  height: 1.4em;
+  width: 6em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5em;
+  background: black;
+}
+body .title-screens button {
+  font-size: 1.5em;
+  color: black;
+}
+
+/*# sourceMappingURL=index.css.map */
