@@ -21,6 +21,7 @@ def start_browse(url):
     options.add_experimental_option("detach", True)
     s = Service(ChromeDriverManager().install())
     browser = webdriver.Chrome(service=s, options=options)
+    browser.set_window_size(50, 50)
     browser.get(url)
     return browser
 
