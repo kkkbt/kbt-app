@@ -4,6 +4,7 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 from app import database_manager
@@ -26,7 +27,7 @@ def start_browse(url):
     # browser = webdriver.Chrome(service=s, options=options)
 
     browser = webdriver.Chrome(options=options)
-    browser.set_window_size(50, 50)
+    browser.set_window_size(900, 500)
     browser.get(url)
     return browser
 
@@ -34,17 +35,17 @@ def start_browse(url):
 def for_login(browser):
     stored_portal_password = database_manager.get_stored_portal_password()
 
-    ele_account1 = browser.find_element_by_css_selector(
+    ele_account1 = browser.find_element(By.CSS_SELECTOR,
         "body > center:nth-child(5) > form > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td > div > div > input"
     )
     ele_account1.send_keys(stored_portal_password["student_number"])
 
-    ele_password1 = browser.find_element_by_css_selector(
+    ele_password1 = browser.find_element(By.CSS_SELECTOR,
         "body > center:nth-child(5) > form > table > tbody > tr > td > table > tbody > tr:nth-child(3) > td > div > div > input"
     )
     ele_password1.send_keys(stored_portal_password["portal_password"])
 
-    ele_botton1 = browser.find_element_by_css_selector(
+    ele_botton1 = browser.find_element(By.CSS_SELECTOR,
         "body > center:nth-child(5) > form > table > tbody > tr > td > table > tbody > tr:nth-child(5) > td > input[type=submit]:nth-child(1)"
     )
     ele_botton1.click()
@@ -61,7 +62,7 @@ def login_portal():
     # login2
 
     for i in range(4, 7):
-        element = browser.find_element_by_xpath(
+        element = browser.find_element(By.XPATH,
             f"//*[@id='authentication']/tbody/tr[{i}]/th[1]"
         )
 
@@ -76,12 +77,12 @@ def login_portal():
             browser.close()
             return
 
-        element_input = browser.find_element_by_xpath(
+        element_input = browser.find_element(By.XPATH,
             f"//*[@id='authentication']/tbody/tr[{i}]/td/div/div/input"
         )
         element_input.send_keys(matrix_element)
 
-        element_button = browser.find_element_by_xpath(
+        element_button = browser.find_element(By.XPATH,
             "//*[@id='authentication']/tbody/tr[8]/td/input[1]"
         )
 
